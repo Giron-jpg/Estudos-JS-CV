@@ -1,0 +1,31 @@
+body{
+    margin: 0;
+    padding: 0;
+    font: normal 15pt Arial;
+}
+
+header h1{
+    text-align: center;
+    color: white;
+    text-shadow: 2px 2px 1px black;
+}
+
+section{
+    margin: auto;
+    background-color: white;
+    border-radius: 6px;
+    width: 70%;
+    padding: 12px;
+    box-shadow: 2px 2px 4px #0000004d;
+}
+
+div{
+    text-align: center;
+    padding: 20px;
+}
+
+footer{
+    text-align: center;
+    color: white;
+    padding: 12px;
+}
