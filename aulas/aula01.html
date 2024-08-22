@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programando em javascript</title>
+</head>
+<body>
+    <h1>Olá, mundo!</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis in inventore ut nesciunt repellendus obcaecati animi eveniet, saepe optio sunt dicta cum perferendis possimus doloribus iure quis. Quasi, cumque vero!</p>
+
+    <form action="cadastro.php" method="post">
+        <label for="isalario">Salário</label>
+        <input type="number" name="salario" id="isalario">
+        <input type="button" value="Enviar" onclick="salario()">
+    </form>
+    
+    <script>
+        //window.alert('Olá mundo!')
+        //window.confirm('Esta gostando?')
+        var nome = String(window.prompt('Qual seu nome?')) //retorna uma string
+        //window.alert('Seja bem vindo, ' + nome)
+        var salario = Number.parseFloat(window.prompt('insira seu salario: '))
+        /*Também é possivel usar apenas Number em caso o programa possa decidir entre inteiro e flutuante*/
+        //window.alert(`Você tem ${2024-ano} Anos`) //USAR CRASES para usar tamplate string (formatação de string) place holder
+        document.write(`${nome.toUpperCase()}<br>`)
+        
+        document.write(`${salario.toFixed(2)} <br>`)
+        document.write(`${salario.toFixed(2).replace('.',',')}<br>`)
+        document.write(`${salario.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})}<br>`)
+        document.write(`${salario.toLocaleString('pt-BR', {style: 'currency', currency: 'USD'})}<br>`)
+        document.write(`${salario.toLocaleString('pt-BR', {style: 'currency', currency: 'EUR'})}<br>`)
+        /*Em uma expreção lógico relacional a ordem de precedêcia é 
+        negação, "e" e por fim "ou"*/
+        /*operador ternário: utiliza os símbolos ?: da seguinte maneira:
+        TESTE? VERDADE: FALSO
+        exemplo: media>=7.0?aprovado:reprovado*/
+    </script>
+</body>
+</html>

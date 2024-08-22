@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilo/style.css">
+    <title>Projeto 2</title>
+</head>
+<body>
+    <header>
+        <h1>Projeto 2</h1>
+    </header>
+    <section>
+        <p>
+            <label for="ano">Ano de nascimento:</label>
+            <input type="number" name="idade" id="ano">
+        </p>
+        <p>
+            <label for="sexo">Sexo: </label>
+            <input type="radio" name="sexo" id="sexom" value="M" checked>
+            <label for="sexom">Masculino</label>
+            <input type="radio" name="sexo" id="sexof" value="F">
+            <label for="sexof">Feminino</label>
+        </p> 
+
+        <input type="button" value="Enviar" onclick="calcula()">
+        
+        <div id="msg">Insira os dados a para ver uma imagem representativa:</div>
+        <!-- <div id="foto">
+            <img id="img" src="" alt="foto representativa">
+        </div> -->
+    </section>
+    <footer>
+        Rodapé
+    </footer>
+    <script src="interacao/script.js"></script>
+</body>
+</html>

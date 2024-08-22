@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+    <style>
+        body{
+            background-color: rgb(95, 32, 241);
+            font-family: "Helvetica";
+        }
+        main{
+            margin: auto;
+            width: 600px;
+            text-align: justify;
+            background-color: white;
+            padding: 12px;
+            border-radius: 8px;
+        }
+        div#img{
+            background-image: url(imagens/árvore-dom.PNG);
+            background-size: contain;
+            background-repeat: no-repeat;
+            width: 250px;
+            height: 40px;
+        }
+        div#teste{
+            margin: auto;
+            width: 200px;
+            font: normal 18pt Arial;
+            height: 200px;
+            background-color: green;
+            text-align: center;
+            line-height: 200px;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h1>Iniciando estudos com DOM</h1>
+        <p><strong>DOM</strong> significa Document Object Model, que é um Modelo de Objetos para Documentos, que nada mais é que o conjunto de objetos dentro de um HTML.</p>
+        <p>Para entender melhor o funcionamento do DOM estudaremos a Árvore DOM. A imagem abaixo mostra a Árvore DOM deste documento até aqui.</p>
+        <div id="img" onclick="mostrar()">
+        </div>
+        <p>Esses objetos permitem a navegaçáo para a manipulação dos scripts do site. Caso haja necessidade em pegar um elemento específico usamos o metodo getElement(s) que pode selecionar: um tag (ByTagName), por id (ById), por name (ByName), por class (ByClassName) ou por seletor. Se o uso do get for atribuido há elementos com vários objetos é necessário informar entre colchetes qual elemento pretende-se usar.
+        </p>
+        <p>
+            No caso do seletor (selector) informado no parágrafo anterior o sistema é um pouco diferente. O uso do método utiliza o método querySelector(), onde o parâmetro recebido informa a tag e sua classe (class) ou identificação (id). Ex.: querySelector('div#img')
+        </p>
+        <script>
+            var corpo = window.document.body
+            var p1 = window.document.body.getElementsByTagName('p')[0]
+            window.document.write(p1.innerHTML)
+    
+            function mostrar(){
+                window.document.getElementById('img').style.height = '400px'
+            }
+        </script>
+
+        <h2>Eventos DOM</h2>
+        <p>São ações que podem ocorrer quando uma função é acionada. Essa ações podem partir por diversos motivos como movimento do mouse, click, manter o mouse sobre um elemento, etc. Para saber mais sobre <a href="https://developer.mozilla.org/en-US/docs/Web/Events#event_index" target="_blank">clique aqui</a>.</p>
+
+        <div id="teste">
+            Testes
+        </div>
+
+        <script>
+            var t = window.document.body.querySelector('div#teste')
+            t.addEventListener('click',cliclou)
+            t.addEventListener('mouseenter', entrou)
+            t.addEventListener('mouseout',saiu)
+            function cliclou(){
+                t.innerText = 'Clicou'
+            }
+            function entrou(){
+                t.innerText = 'Entrou'
+            }
+            function saiu(){
+                t.innerText = 'Saiu'
+            }
+        </script>
+        <h2>Somando Valores</h2>
+        <input type="number" name="nn1" id="in1">
+        <input type="number" name="nn2" id="in2">
+        <input type="button" value="Somar" onclick="somar()">
+        <div id="res">Resultado</div>
+        <script>
+            function somar(){
+                var tn1 = window.document.getElementById('in1')
+                var tn2 = window.document.getElementById('in2')
+                var n1 = Number(tn1.value)
+                var n2 = Number(tn2.value)
+                var s = n1 + n2
+                res.innerHTML = `A soma entre ${n1} e ${n2} é ${n1+n2}`                
+            }
+        </script>
+        
+    </main>
+</body>
+</html>

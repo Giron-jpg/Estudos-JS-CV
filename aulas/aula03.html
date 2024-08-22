@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Condicional</title>
+    <style>
+        body{
+            background-color: gray;
+            padding: 12px;
+        }
+        label, input{
+            margin-top: 12px;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <label for="ipais">Pais:</label>
+    <input type="text" name="ipaises" id="ipais">
+    <input type="button" value="Enviar" onclick="verifica()">
+
+    <div id="res"></div>
+    <script>
+        function verifica(){
+            var tpais = document.querySelector('input#ipais')
+            var pais = String(tpais.value).trim().toLocaleLowerCase()
+            var res = document.querySelector('div#res')
+            if (pais == 'brasil'){
+                res.innerHTML = `Você é brasileiro`
+            }else{
+                res.innerHTML = 'Você é estrangeiro'
+            }
+        }
+    </script>
+
+    <label for="ivel">Velocidade:</label>
+    <input type="number" name="txtvel" id="ivel">
+    <input type="button" value="Enviar" onclick="verifica2()">
+    <div id="res2"></div>
+    <script>
+        function verifica2(){
+            var tvel = document.querySelector('input#ivel')
+            var vel = Number(tvel.value)
+            var res2 = document.querySelector('div#res2')
+            if (vel >= 70){
+                res2.innerHTML = `Você está <strong>acima da velocidade</strong> permitida na torres`
+            }else{
+                res2.innerHTML = 'Você esta em uma boa velocidade, dirija com cuidado'
+            }
+        }
+    </script>
+
+</body>
+</html>
